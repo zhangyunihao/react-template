@@ -8,6 +8,7 @@ import {
 import Login from './pages/login'
 import TablePage from './pages/tablePage'
 import Home from './pages/home'
+import './App.css'
 
 export default function App() {
   return (
