@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hello, World</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 90%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            height: 100%
+        }
+    </style>
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=你的密钥">
+        </script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <button id='button1'>1</button>
+    <button id='button2'>2</button>
+    <button id='button3'>3</button>
+
+    <script type="text/javascript">
+
+        let point1 = { lng: 116.611544, lat: 39.928216 }
+        let point2 = { lng: 117.611544, lat: 39.928216 }
+        let point3 = { lng: 117.612544, lat: 39.928216 }
+        // 创建地图实例 
+        var map = new BMapGL.Map("container");
+        // 初始化地图，设置中心点坐标和地图级别 
+        map.centerAndZoom(point1, 15);
+        map.setTilt(60);
+        let marker1 = new BMapGL.Marker(point1);        // 创建标注   
+        map.addOverlay(marker1);
+        let marker2 = new BMapGL.Marker(point2);        // 创建标注   
+        map.addOverlay(marker2);
+        let marker3 = new BMapGL.Marker(point3);        // 创建标注   
+        map.addOverlay(marker3);
+
+        document.querySelector('#button1').addEventListener('click', () => {
+            console.log('click')
+            map.centerAndZoom(point1, 15);
+        })
+        document.querySelector('#button2').addEventListener('click', () => {
+            console.log('click')
+            map.centerAndZoom(point2, 15);
+        })
+        document.querySelector('#button3').addEventListener('click', () => {
+            console.log('click')
+            map.centerAndZoom(point3, 15);
+        })
+
+    </script>
+</body>
+
+</html>
